@@ -14,7 +14,13 @@ document.addEventListener('DOMContentLoaded', updateUIDate);
 celsiusValue.onkeyup = function() {
     fahrenheitValue.innerHTML = parseFloat((celsiusValue.value * (9/5) + 32)).toFixed(2);
 
-    console.log(celsiusValue.value);
+    let fahrenheitValueArr = fahrenheitValue.innerHTML.split('');
+
+    if(fahrenheitValueArr[3] && fahrenheitValueArr[4] == 0){
+        fahrenheitValue.innerHTML = parseFloat((celsiusValue.value * (9/5) + 32)).toFixed(1);
+    } else {
+        fahrenheitValue.innerHTML = parseFloat((celsiusValue.value * (9/5) + 32)).toFixed(2);
+    }
 }
 
 
